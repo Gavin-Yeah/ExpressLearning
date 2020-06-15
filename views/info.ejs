@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title><%- title%></title>
+</head>
+<body>
+<h1 id="title"><%-title%></h1>
+<h3><%-content%></h3>
+<p><span class="num">5</span>s后跳转至<a href="<%-href%>"><%-hrefTxt%></a></p>
+
+<script type="text/javascript">
+    let n =5;
+    setInterval(()=>{
+        n--;
+        if(n<0){
+            location.href = '<%-href%>';
+        }else{
+            document.querySelector('.num').innerHTML = n;
+        }
+
+    },1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="header">
+    <div class="navheader">lcbooks</div>
+    <div class="nav">
+        <div class="navList">
+            <div class="link">小说文学</div>
+            <div class="link">历史传记</div>
+            <div class="link">历史传记</div>
+            <div class="link">历史传记</div>
+            <div class="link">历史传记</div>
+            <div class="link">历史传记</div>
+            <div class="link">历史传记</div>
+            <div class="link">历史传记</div>
+
+            <div class="search">
+                <input type="text">
+                <button><span class="icon"></span><span class="text">search</span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="content">
+
+        <div class="bookList">
+            <div class="intro">
+                <img src="<%- book.bookimg%>" alt="">
+                <div>
+                    <h3>书名：<%- book.bookname%></h3>
+                    <h3>作者：<%- book.author%></h3>
+                    <h3>类别：<%- book.category%></h3>
+                </div>
+                <div class="brief">
+                    <h3>
+                        简介：
+
+                    </h3>
+                    <p>
+                        <%- book.brief%>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="erweima">
+            <img src="/img/cirko.png" alt="">
+        </div>
+    </div>
+</div>
+</body>
+</html>

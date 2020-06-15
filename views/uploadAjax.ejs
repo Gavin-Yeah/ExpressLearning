@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>upload</title>
+
+</head>
+<body>
+<h1 id="title">img upload</h1>
+<!--表单上传文件时 需改变属性enctype='multipart/form-data' 即定义表单的上传类型问文件类型-->
+<form id= 'uploadForm' action="/imgUpload" method="post" enctype="multipart/form-data">
+    <input id="imgInput" type="file" name="imgfile">
+    <div>upload</div>
+</form>
+<script type="text/javascript" src="/javascripts/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+    $('#imgInput').change(function (e) {
+        // console.log($('#uploadForm'));
+        console.log(this.files);
+        let file = this.files[0];
+        //创建formData对象，将文件追加到formData对象中
+        let formDataObj = new FormData();
+        formDataObj.append('imgfile',file);
+
+    })
+</script>
+</body>
+</html>
