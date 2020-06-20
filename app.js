@@ -12,6 +12,7 @@ var bookRouter = require('./routes/bookRouter');
 var loginRouter = require('./routes/loginRouter');
 var registerRouter = require('./routes/registerRouter');
 var uploadRouter = require('./routes/uploadRouter');
+var downloadRouter = require('./routes/downloadRouter');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -91,6 +92,7 @@ app.use('/books',bookRouter);
 app.use('/login',loginRouter);
 app.use('/register',registerRouter);
 app.use('/imgUpload',uploadRouter);
+app.use('/download',downloadRouter);
 //设置搜索的路由
 app.get('/search/:searchKey/page/pid',async(req,res)=>{
     let page = parseInt(req.params.pid);

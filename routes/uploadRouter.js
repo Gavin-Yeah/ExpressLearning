@@ -17,6 +17,15 @@ router.get('/ajax',(req,res)=>{
 });
 //处理上传的post请求
 //若果上传单个文件，可调用upload.single()方法 并且将表单文件的name值传入
+// router.post('/',upload.single('imgfile'),(req,res)=>{
+//     console.log(req.file);
+//     let oldPath = req.file.destination+'/'+req.file.filename;
+//     let newPath = req.file.destination+'/'+req.file.filename + req.file.originalname;
+//     fs.rename(oldPath,newPath, ()=>{
+//         console.log('rename success');
+//     });
+//     res.send("<h1>upload success</h1> <img src='/upload/"+req.file.filename+req.file.originalname+"' alt=''>");
+// });
 router.post('/',upload.single('imgfile'),(req,res)=>{
     console.log(req.file);
     let oldPath = req.file.destination+'/'+req.file.filename;
@@ -24,9 +33,11 @@ router.post('/',upload.single('imgfile'),(req,res)=>{
     fs.rename(oldPath,newPath, ()=>{
         console.log('rename success');
     });
-    res.send("<h1>upload success</h1> <img src='/upload/"+req.file.filename+req.file.originalname+"' alt=''>");
+    res.json({
+        state:'ok',
+        imgUrl:'/upload/'+req.file.filename+req.file.originalname
+    });
 });
-
 
 
 
